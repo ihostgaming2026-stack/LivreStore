@@ -3,185 +3,345 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LivreStore - GTA 6 Ultimate Edition</title>
+    <title>GTA 6 PRÉ VENDA (Ultimate Edition) - LibRyStore</title>
     <style>
-        /* Mantendo o padrão estético escuro do site conforme as telas anteriores */
-        body {
-            background-color: #0d0e12;
-            color: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        * {
+            box-sizing: border-box;
             margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+
+        body {
+            background-color: #0b0c16;
+            color: #ffffff;
+            display: block;
+            min-height: 100vh;
+            padding-bottom: 50px;
+        }
+
+        /* Header Centralizado */
+        header {
+            width: 100%;
+            padding: 30px 20px;
+            text-align: center;
+            background: linear-gradient(180deg, #141627 0%, #0b0c16 100%);
+            border-bottom: 1px solid #1f233f;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: #6366f1;
+        }
+
+        /* Container Principal do Produto */
         .container {
-            max-width: 900px;
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: block;
             width: 100%;
-            background: #13151b;
+        }
+
+        .product-table {
+            display: table;
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+
+        .product-row {
+            display: table-row;
+        }
+
+        /* Coluna da Esquerda: Imagem */
+        .product-image-side {
+            display: table-cell;
+            width: 55%;
+            vertical-align: top;
+            padding-right: 40px;
+        }
+
+        .product-image-side img {
+            width: 100%;
             border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
-            margin-bottom: 20px;
-        }
-        .content-flex {
-            display: flex;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-        .product-image {
-            flex: 1;
-            min-width: 280px;
-            max-width: 400px;
-        }
-        .product-image img {
-            width: 100%;
-            border-radius: 8px;
+            border: 1px solid #2a2e50;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             display: block;
         }
-        .checkout-side {
-            flex: 1;
-            min-width: 280px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+
+        /* Coluna da Direita: Informações e Compra */
+        .product-info-side {
+            display: table-cell;
+            width: 45%;
+            vertical-align: top;
+            background-color: #141627;
+            border-radius: 16px;
+            padding: 30px;
+            border: 1px solid #1f233f;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
         }
-        .price-tag {
-            font-size: 32px;
-            color: #00ff66;
-            font-weight: bold;
+
+        .badge {
+            display: inline-block;
+            background-color: #e0f2fe;
+            color: #0369a1;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1.3;
             margin-bottom: 20px;
+            color: #ffffff;
         }
-        .form-group {
+
+        .price-container {
+            margin: 25px 0;
+            padding: 15px 0;
+            border-top: 1px solid #2a2e50;
+            border-bottom: 1px solid #2a2e50;
+        }
+
+        .price-label {
+            font-size: 13px;
+            color: #94a3b8;
+            margin-bottom: 5px;
+        }
+
+        .price-value {
+            font-size: 36px;
+            font-weight: 800;
+            color: #22c55e;
+        }
+
+        .input-group {
             margin-bottom: 15px;
         }
-        .form-group label {
+
+        .input-group label {
             display: block;
+            font-size: 12px;
+            color: #94a3b8;
             margin-bottom: 5px;
-            color: #a0a5b5;
-            font-size: 14px;
         }
-        .form-group input {
+
+        .input-group input {
             width: 100%;
             padding: 12px;
-            background: #1c1f26;
-            border: 1px solid #2d323f;
+            background: #0b0c16;
+            border: 1px solid #2a2e50;
             border-radius: 6px;
-            color: #ffffff;
-            font-size: 16px;
-            box-sizing: border-box;
+            color: #fff;
+            font-size: 14px;
         }
-        .form-group input:focus {
-            outline: none;
-            border-color: #00ff66;
-        }
-        .btn-submit {
+
+        /* Botão de Compra */
+        .btn-buy {
+            display: block;
             width: 100%;
-            padding: 15px;
-            background: #3b3175;
-            border: none;
-            border-radius: 6px;
+            background-color: #6366f1;
             color: #ffffff;
+            border: none;
+            padding: 16px 20px;
             font-size: 16px;
-            font-weight: bold;
+            font-weight: 700;
+            border-radius: 8px;
             cursor: pointer;
-            text-transform: uppercase;
-            transition: background 0.2s;
+            text-align: center;
+            transition: background-color 0.2s;
             margin-top: 10px;
+            text-transform: uppercase;
         }
-        .btn-submit:hover {
-            background: #4c3f93;
+
+        .btn-buy:hover {
+            background-color: #4f46e5;
         }
+
+        /* Descrição Completa Abaixo */
+        .description-container {
+            max-width: 1000px;
+            margin: 40px auto 0 auto;
+            padding: 0 20px;
+        }
+
         .description-box {
-            margin-top: 30px;
-            border-top: 1px solid #2d323f;
-            padding-top: 20px;
+            background-color: #141627;
+            border-radius: 16px;
+            padding: 40px;
+            border: 1px solid #1f233f;
         }
+
         .description-box h2 {
             font-size: 20px;
-            margin-bottom: 15px;
-            color: #ffffff;
-            border-left: 4px solid #3b3175;
-            padding-left: 10px;
+            margin-bottom: 20px;
+            color: #a5b4fc;
+            border-left: 4px solid #6366f1;
+            padding-left: 12px;
         }
+
         .description-box p {
-            color: #a0a5b5;
-            line-height: 1.6;
             font-size: 15px;
+            line-height: 1.6;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+
+        /* Ficha Técnica */
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+
+        .specs-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #1f233f;
+            font-size: 14px;
+        }
+
+        .specs-table td:first-child {
+            font-weight: 600;
+            color: #94a3b8;
+            width: 30%;
+        }
+
+        .specs-table td:last-child {
+            color: #ffffff;
+        }
+
+        .specs-table tr:last-child td {
+            border-bottom: none;
         }
     </style>
 </head>
 <body>
 
+    <!-- Header com Nome da Loja Centralizada -->
+    <header>
+        <div class="logo">🎮 LibRy<span>Store</span></div>
+    </header>
+
     <div class="container">
-        <div class="content-flex">
-            <!-- Lado da Imagem (gta6.jpg) -->
-            <div class="product-image">
-                <img src="gta6.jpg" alt="GTA 6 Ultimate Edition">
-            </div>
-
-            <!-- Lado do Formulário / Botão -->
-            <div class="checkout-side">
-                <div class="price-tag">R$ 10,00</div>
+        <div class="product-table">
+            <div class="product-row">
                 
-                <form id="formCheckout" onsubmit="redirecionarPagamento(event)">
-                    <div class="form-group">
-                        <label for="payerName">Nome Completo</label>
-                        <input type="text" id="payerName" required placeholder="Digite seu nome completo">
-                    </div>
+                <!-- Coluna da Esquerda: Imagem do Jogo -->
+                <div class="product-image-side">
+                    <img src="gta6.jpg" alt="GTA 6 Ultimate Edition">
+                </div>
+
+                <!-- Coluna da Direita: Informações e Redirecionamento -->
+                <div class="product-info-side">
+                    <span class="badge">Pré-Venda Exclusiva</span>
+                    <h1>GTA 6 PRÉ VENDA (Ultimate Edition) Grand Theft Auto VI ( PS5 Mídia Digital</h1>
                     
-                    <div class="form-group">
-                        <label for="payerDocument">CPF (Apenas números)</label>
-                        <input type="text" id="payerDocument" maxlength="11" required placeholder="Ex: 00000000000">
+                    <div class="price-container">
+                        <div class="price-label">Preço Único</div>
+                        <div class="price-value">R$ 119,99</div>
                     </div>
 
-                    <button type="submit" id="btnComprar" class="btn-submit">
-                        GERANDO PIX...
-                    </button>
-                </form>
+                    <!-- Formulário para o cliente preencher antes do redirecionamento -->
+                    <form onsubmit="redirecionarPagamento(event)">
+                        <div class="input-group">
+                            <label for="payerName">Nome Completo</label>
+                            <input type="text" id="payerName" placeholder="Ex: João Silva" required>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="payerDocument">CPF (Apenas números)</label>
+                            <input type="text" id="payerDocument" placeholder="Ex: 12345678901" maxlength="11" required>
+                        </div>
+
+                        <!-- Botão de Ação -->
+                        <button type="submit" class="btn-buy" id="btnComprar">Comprar Agora via PIX</button>
+                    </form>
+                </div>
+
             </div>
         </div>
+    </div>
 
-        <!-- Descrição do Produto inferior -->
+    <!-- Seção de Descrição Completa -->
+    <div class="description-container">
         <div class="description-box">
             <h2>Descrição do Produto</h2>
-            <p>
-                Experimente a revolução dos jogos de ação com GTA 6 Ultimate Edition para PS5 em mídia digital. 
-                Este título icônico oferece um mundo aberto imersivo, repleto de aventuras eletrizantes, 
-                gráficos de última geração e uma narrativa envolvente que prende o jogador do início ao fim. 
-                Desenvolvido especialmente para PlayStation 5, o jogo explora ao máximo a potência do console, 
-                garantindo performance fluida e visuais impressionantes.
-            </p>
+            <p>Experimente a revolução dos jogos de ação com GTA 6 Ultimate Edition para PS5 em mídia digital. Este título icônico oferece um mundo aberto imersivo, repleto de aventuras eletrizantes, gráficos de última geração e uma narrativa envolvente que prende o jogador do início ao fim. Desenvolvido especialmente para PlayStation 5, o jogo explora ao máximo a potência do console, garantindo performance fluida e visuais impressionantes.</p>
+            
+            <p>GTA 6 Ultimate Edition traz uma experiência completa, com conteúdos exclusivos que ampliam sua imersão e diversão. Explore cidades vibrantes, conduza veículos incríveis e participe de missões que desafiam sua estratégia e reflexos. A interatividade com personagens complexos e cenários detalhados cria uma conexão emocional intensa, fazendo você se sentir parte do universo do jogo.</p>
+            
+            <p>Perfeito para fãs de jogos de mundo aberto e action, GTA 6 é a escolha certa para quem busca entretenimento de alta qualidade e jogabilidade dinâmica. A mídia digital facilita o acesso imediato ao jogo, permitindo começar a jogar sem esperar por entregas físicas.</p>
+
+            <h2 style="margin-top: 40px;">Ficha Técnica</h2>
+            <table class="specs-table">
+                <tr>
+                    <td>Plataforma</td>
+                    <td>PS5</td>
+                </tr>
+                <tr>
+                    <td>Edição</td>
+                    <td>Ultimate Edition</td>
+                </tr>
+                <tr>
+                    <td>Tipo de Mídia</td>
+                    <td>Digital (download)</td>
+                </tr>
+                <tr>
+                    <td>Gênero</td>
+                    <td>Ação, Aventura, Mundo Aberto</td>
+                </tr>
+                <tr>
+                    <td>Idioma</td>
+                    <td>Português (Brasil)</td>
+                </tr>
+                <tr>
+                    <td>Desenvolvedor</td>
+                    <td>Rockstar Games</td>
+                </tr>
+                <tr>
+                    <td>Formato</td>
+                    <td>Jogo completo com conteúdos adicionais exclusivos</td>
+                </tr>
+                <tr>
+                    <td>Compatibilidade</td>
+                    <td>Exclusivo para PlayStation 5</td>
+                </tr>
+            </table>
         </div>
     </div>
 
     <script>
-        // Ajustando o texto inicial do botão para corresponder ao layout visualizado
-        document.getElementById('btnComprar').innerText = "GERANDO PIX...";
-
         function redirecionarPagamento(event) {
-            // Evita o recarregamento padrão da página ao enviar o formulário
             event.preventDefault();
 
             const nome = document.getElementById('payerName').value.trim();
             const cpf = document.getElementById('payerDocument').value.trim().replace(/\D/g, '');
             const btn = document.getElementById('btnComprar');
 
-            // Validação simples do CPF para garantir integridade antes de enviar
             if (!nome || cpf.length !== 11) {
-                alert("Por favor, digite o nome completo e um CPF válido com 11 dígitos.");
+                alert("Por favor, preencha o Nome Completo e um CPF válido com 11 dígitos.");
                 return;
             }
 
-            // Desabilita o botão para evitar cliques múltiplos involuntários
-            btn.innerText = "REDIRECIONANDO...";
+            btn.innerText = "Redirecionando...";
             btn.disabled = true;
 
-            // Redireciona diretamente para o link de checkout externo solicitado
+            // Redirecionamento direto para a SyncPayments com o link enviado
             window.location.href = "https://app.syncpayments.com.br/payment-link/a22a6886-5bf8-4ed7-8455-407f49a4596b";
         }
     </script>
-
 </body>
 </html>
