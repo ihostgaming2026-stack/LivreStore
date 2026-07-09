@@ -20,7 +20,7 @@
         /* Header Centralizado */
         header {
             display: flex;
-            justify-content: center;
+            justify-content: center; /* Centraliza horizontalmente */
             align-items: center;
             padding: 25px 10%;
             background-color: #fff;
@@ -28,7 +28,7 @@
         }
 
         .logo {
-            font-size: 36px;
+            font-size: 36px; /* Aumentado levemente para dar mais destaque */
             font-weight: bold;
             color: #27a454;
             font-style: italic;
@@ -40,9 +40,9 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 40px 10%;
-            min-height: calc(100vh - 90px);
-            background: linear-gradient(rgba(255,255,255,0.65), rgba(255,255,255,0.65)), url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200') no-repeat center center;
+            padding: 60px 10%;
+            min-height: 85vh;
+            background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200') no-repeat center center;
             background-size: cover;
         }
 
@@ -54,22 +54,16 @@
             color: #216934;
             font-size: 42px;
             margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero-text p {
-            font-size: 18px;
-            color: #555;
         }
 
         /* Simulador Container */
         .simulator-box {
             background: #fff;
-            padding: 30px;
+            padding: 35px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             width: 100%;
-            max-width: 520px;
+            max-width: 500px;
         }
 
         .sim-title {
@@ -87,7 +81,8 @@
 
         /* Slider Customization */
         .slider-container {
-            margin-bottom: 25px;
+            margin-bottom: 30px;
+            position: relative;
         }
 
         .value-display {
@@ -97,7 +92,7 @@
             border-radius: 20px;
             font-weight: bold;
             display: inline-block;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             font-size: 18px;
         }
 
@@ -106,7 +101,7 @@
             -webkit-appearance: none;
             height: 8px;
             border-radius: 5px;
-            background: #27a454; /* Linha preenchida em verde */
+            background: #e0e0e0;
             outline: none;
         }
 
@@ -125,38 +120,51 @@
         .range-limits {
             display: flex;
             justify-content: space-between;
-            font-size: 13px;
+            font-size: 14px;
             color: #666;
-            margin-top: 8px;
+            margin-top: 5px;
             font-weight: bold;
         }
 
-        /* Campos de Entrada Form */
-        .form-group {
-            margin-bottom: 15px;
-            text-align: left;
+        /* Grid de Parcelas */
+        .parcelas-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-bottom: 30px;
         }
 
-        .form-group label {
-            display: block;
-            font-size: 14px;
-            color: #444;
-            margin-bottom: 5px;
-            font-weight: 500;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ccc;
+        .parcela-card {
+            background: #f4f6f4;
+            border: 2px solid transparent;
+            padding: 12px 5px;
+            text-align: center;
             border-radius: 6px;
-            font-size: 15px;
-            outline: none;
-            transition: border-color 0.2s;
+            cursor: pointer;
+            transition: all 0.2s ease;
         }
 
-        .form-group input:focus {
+        .parcela-card.active {
+            background: #27a454;
+            color: white;
             border-color: #27a454;
+        }
+
+        .parcela-card .num-vezes {
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            color: #666;
+        }
+
+        .parcela-card.active .num-vezes {
+            color: #fff;
+        }
+
+        .parcela-card .valor-vezes {
+            font-size: 14px;
+            font-weight: bold;
         }
 
         /* Botão Principal */
@@ -167,33 +175,112 @@
             color: #216934;
             text-align: center;
             padding: 15px;
-            border: none;
             border-radius: 30px;
             font-size: 20px;
             font-weight: 900;
-            text-transform: uppercase;
-            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3);
-            cursor: pointer;
-            transition: transform 0.1s ease, background-color 0.2s;
-            margin-top: 20px;
             text-decoration: none;
-        }
-
-        .btn-solicitar:hover {
-            background-color: #f5c200;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);
+            transition: transform 0.1s ease;
         }
 
         .btn-solicitar:active {
-            transform: scale(0.99);
+            transform: scale(0.98);
+        }
+
+        .legal-notice {
+            font-size: 11px;
+            color: #888;
+            margin-top: 15px;
+            line-height: 1.4;
         }
 
         /* Responsividade */
         @media (max-width: 768px) {
-            .hero { flex-direction: column; padding: 30px 20px; text-align: center; }
+            .hero { flex-direction: column; padding: 40px 20px; text-align: center; }
             .hero-text { max-width: 100%; margin-bottom: 30px; }
             .hero-text h1 { font-size: 30px; }
-            .simulator-box { max-width: 100%; }
+            .parcelas-grid { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
 <body>
+
+    <header>
+        <div class="logo">Credliwe</div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Empréstimo pessoal online, rápido e seguro.</h1>
+            <p>Dinheiro na conta sem burocracia para você usar como quiser.</p>
+        </div>
+
+        <div class="simulator-box">
+            <div class="sim-title"><span>1.</span> Quer um empréstimo pessoal de quanto?</div>
+            <div class="slider-container">
+                <div class="value-display" id="amountDisplay">R$ 2000</div>
+                <input type="range" min="500" max="3500" step="100" value="2000" class="range-slider" id="amountSlider">
+                <div class="range-limits">
+                    <span>R$ 500</span>
+                    <span>R$ 3500</span>
+                </div>
+            </div>
+
+            <div class="sim-title"><span>2.</span> Quer pagar em quantas parcelas?</div>
+            <div class="parcelas-grid">
+                <div class="parcela-card" onclick="selectCard(this, 3)" id="card3">
+                    <div class="num-vezes">3X de</div>
+                    <div class="valor-vezes" id="val3">R$ 0,00</div>
+                </div>
+                <div class="parcela-card" onclick="selectCard(this, 6)" id="card6">
+                    <div class="num-vezes">6X de</div>
+                    <div class="valor-vezes" id="val6">R$ 0,00</div>
+                </div>
+                <div class="parcela-card" onclick="selectCard(this, 9)" id="card9">
+                    <div class="num-vezes">9X de</div>
+                    <div class="valor-vezes" id="val9">R$ 0,00</div>
+                </div>
+                <div class="parcela-card active" onclick="selectCard(this, 12)" id="card12">
+                    <div class="num-vezes">12X de</div>
+                    <div class="valor-vezes" id="val12">R$ 0,00</div>
+                </div>
+            </div>
+
+            <a href="#" class="btn-solicitar">Solicite Já!</a>
+
+            <p class="legal-notice">
+                Informações adicionais. Prazo de pagamento: O período mínimo é de 3 meses e o máximo de 12 meses. Sujeito a análise de crédito.
+            </p>
+        </div>
+    </section>
+
+    <script>
+        const slider = document.getElementById('amountSlider');
+        const display = document.getElementById('amountDisplay');
+
+        const taxas = { 3: 0.14, 6: 0.11, 9: 0.09, 12: 0.08 };
+
+        function calcularParcelas(valor) {
+            document.getElementById('val3').innerText = 'R$ ' + ((valor * (1 + taxas[3])) / 3).toFixed(2).replace('.', ',');
+            document.getElementById('val6').innerText = 'R$ ' + ((valor * (1 + taxas[6])) / 6).toFixed(2).replace('.', ',');
+            document.getElementById('val9').innerText = 'R$ ' + ((valor * (1 + taxas[9])) / 9).toFixed(2).replace('.', ',');
+            document.getElementById('val12').innerText = 'R$ ' + ((valor * (1 + taxas[12])) / 12).toFixed(2).replace('.', ',');
+        }
+
+        function selectCard(element, parcelas) {
+            document.querySelectorAll('.parcela-card').forEach(card => {
+                card.classList.remove('active');
+            });
+            element.classList.add('active');
+        }
+
+        slider.addEventListener('input', function() {
+            display.innerText = 'R$ ' + this.value;
+            calcularParcelas(Number(this.value));
+        });
+
+        calcularParcelas(2000);
+    </script>
+</body>
+</html>
