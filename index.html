@@ -20,7 +20,7 @@
         /* Header Centralizado */
         header {
             display: flex;
-            justify-content: center; /* Centraliza horizontalmente */
+            justify-content: center;
             align-items: center;
             padding: 25px 10%;
             background-color: #fff;
@@ -28,7 +28,7 @@
         }
 
         .logo {
-            font-size: 36px; /* Aumentado levemente para dar mais destaque */
+            font-size: 36px;
             font-weight: bold;
             color: #27a454;
             font-style: italic;
@@ -40,9 +40,9 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 60px 10%;
-            min-height: 85vh;
-            background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200') no-repeat center center;
+            padding: 40px 10%;
+            min-height: calc(100vh - 90px);
+            background: linear-gradient(rgba(255,255,255,0.65), rgba(255,255,255,0.65)), url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200') no-repeat center center;
             background-size: cover;
         }
 
@@ -54,16 +54,22 @@
             color: #216934;
             font-size: 42px;
             margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            color: #555;
         }
 
         /* Simulador Container */
         .simulator-box {
             background: #fff;
-            padding: 35px;
+            padding: 30px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             width: 100%;
-            max-width: 500px;
+            max-width: 520px;
         }
 
         .sim-title {
@@ -81,8 +87,7 @@
 
         /* Slider Customization */
         .slider-container {
-            margin-bottom: 30px;
-            position: relative;
+            margin-bottom: 25px;
         }
 
         .value-display {
@@ -92,7 +97,7 @@
             border-radius: 20px;
             font-weight: bold;
             display: inline-block;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             font-size: 18px;
         }
 
@@ -101,7 +106,7 @@
             -webkit-appearance: none;
             height: 8px;
             border-radius: 5px;
-            background: #e0e0e0;
+            background: #27a454; /* Linha preenchida em verde */
             outline: none;
         }
 
@@ -120,51 +125,38 @@
         .range-limits {
             display: flex;
             justify-content: space-between;
-            font-size: 14px;
+            font-size: 13px;
             color: #666;
-            margin-top: 5px;
+            margin-top: 8px;
             font-weight: bold;
         }
 
-        /* Grid de Parcelas */
-        .parcelas-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-            margin-bottom: 30px;
+        /* Campos de Entrada Form */
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
         }
 
-        .parcela-card {
-            background: #f4f6f4;
-            border: 2px solid transparent;
-            padding: 12px 5px;
-            text-align: center;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .parcela-card.active {
-            background: #27a454;
-            color: white;
-            border-color: #27a454;
-        }
-
-        .parcela-card .num-vezes {
-            font-size: 12px;
-            font-weight: bold;
-            text-transform: uppercase;
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            color: #444;
             margin-bottom: 5px;
-            color: #666;
+            font-weight: 500;
         }
 
-        .parcela-card.active .num-vezes {
-            color: #fff;
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+            outline: none;
+            transition: border-color 0.2s;
         }
 
-        .parcela-card .valor-vezes {
-            font-size: 14px;
-            font-weight: bold;
+        .form-group input:focus {
+            border-color: #27a454;
         }
 
         /* Botão Principal */
@@ -175,53 +167,33 @@
             color: #216934;
             text-align: center;
             padding: 15px;
+            border: none;
             border-radius: 30px;
             font-size: 20px;
             font-weight: 900;
-            text-decoration: none;
             text-transform: uppercase;
-            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);
-            transition: transform 0.1s ease;
+            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3);
+            cursor: pointer;
+            transition: transform 0.1s ease, background-color 0.2s;
+            margin-top: 20px;
+            text-decoration: none;
+        }
+
+        .btn-solicitar:hover {
+            background-color: #f5c200;
         }
 
         .btn-solicitar:active {
-            transform: scale(0.98);
-        }
-
-        .legal-notice {
-            font-size: 11px;
-            color: #888;
-            margin-top: 15px;
-            line-height: 1.4;
+            transform: scale(0.99);
         }
 
         /* Responsividade */
         @media (max-width: 768px) {
-            .hero { flex-direction: column; padding: 40px 20px; text-align: center; }
+            .hero { flex-direction: column; padding: 30px 20px; text-align: center; }
             .hero-text { max-width: 100%; margin-bottom: 30px; }
             .hero-text h1 { font-size: 30px; }
-            .parcelas-grid { grid-template-columns: repeat(2, 1fr); }
+            .simulator-box { max-width: 100%; }
         }
     </style>
 </head>
 <body>
-
-    <header>
-        <div class="logo">Credliwe</div>
-    </header>
-
-    <section class="hero">
-        <div class="hero-text">
-            <h1>Empréstimo pessoal online, rápido e seguro.</h1>
-            <p>Dinheiro na conta sem burocracia para você usar como quiser.</p>
-        </div>
-
-        <div class="simulator-box">
-            <div class="sim-title"><span>1.</span> Quer um empréstimo pessoal de quanto?</div>
-            <div class="slider-container">
-                <div class="value-display" id="amountDisplay">R$ 2000</div>
-                <input type="range" min="500" max="3500" step="100" value="2000" class="range-slider" id="amountSlider">
-                <div class="range-limits">
-                    <span>R$ 500</span>
-                    <span>R$ 3500</span>
-                </div>
