@@ -111,7 +111,7 @@
             -webkit-appearance: none;
             height: 8px;
             border-radius: 5px;
-            background: #27a454;
+            background: #e2e8f0;
             outline: none;
         }
 
@@ -324,18 +324,19 @@
     </section>
 
     <script>
-        const slider = document.getElementById('amountSlider');
-        const display = document.getElementById('amountDisplay');
-        const parcelasInput = document.getElementById('parcelasInput');
-
-        // Taxas calculadas proporcionalmente para bater com a Simplic
-        const taxas = { 3: 0.14, 6: 0.11, 9: 0.09, 12: 0.08 };
+        // Coeficientes exatos com base nos valores reais da Simplic para R$2000
+        const multiplicadores = {
+            3: 0.43016,  // Multiplicado pelo valor resulta na parcela exata (ex: 2000 * 0.43016 = 860,32)
+            6: 0.26244,  // (2000 * 0.26244 = 524,88)
+            9: 0.21009,  // (2000 * 0.21009 = 420,18)
+            12: 0.186335 // (2000 * 0.186335 = 372,67)
+        };
 
         function calcularParcelas(valor) {
-            document.getElementById('val3').innerText = 'R$ ' + ((valor * (1 + taxas[3])) / 3).toFixed(2).replace('.', ',');
-            document.getElementById('val6').innerText = 'R$ ' + ((valor * (1 + taxas[6])) / 6).toFixed(2).replace('.', ',');
-            document.getElementById('val9').innerText = 'R$ ' + ((valor * (1 + taxas[9])) / 9).toFixed(2).replace('.', ',');
-            document.getElementById('val12').innerText = 'R$ ' + ((valor * (1 + taxas[12])) / 12).toFixed(2).replace('.', ',');
+            document.getElementById('val3').innerText = 'R$ ' + (valor * multiplicadores[3]).toFixed(2).replace('.', ',');
+            document.getElementById('val6').innerText = 'R$ ' + (valor * multiplicadores[6]).toFixed(2).replace('.', ',');
+            document.getElementById('val9').innerText = 'R$ ' + (valor * multiplicadores[9]).toFixed(2).replace('.', ',');
+            document.getElementById('val12').innerText = 'R$ ' + (valor * multiplicadores[12]).toFixed(2).replace('.', ',');
         }
 
         function selectCard(element, parcelas) {
@@ -343,15 +344,40 @@
                 card.classList.remove('active');
             });
             element.classList.add('active');
-            parcelasInput.value = parcelas; // Atualiza o valor oculto para enviar no formulário
+            document.getElementById('parcelasInput').value = parcelas;
         }
 
-        slider.addEventListener('input', function() {
-            display.innerText = 'R$ ' + this.value;
-            calcularParcelas(Number(this.value));
+        // Garante que o script roda perfeitamente assim que a página carrega no GitHub Pages
+        document.addEventListener('DOMContentLoaded', function() {
+            const slider = document.getElementById('amountSlider');
+            const display = document.getElementById('amountDisplay');
+
+            // Escuta as mudanças ao arrastar o slider
+            slider.addEventListener('input', function() {
+                display.innerText = 'R$ ' + this.value;
+                calcularParcelas(Number(this.value));
+            });
+
+            // Inicialização imediata forçada com o valor padrão 2000
+            calcularParcelas(2000);
         });
 
         // Máscara de CPF automática
         document.getElementById('cpf').addEventListener('input', function (e) {
             let value = e.target.value.replace(/\D/g, '');
             if (value.length > 3) value = value.substring(0,3) + '.' + value.substring(3);
+            if (value.length > 7) value = value.substring(0,7) + '.' + value.substring(7);
+            if (value.length > 11) value = value.substring(0,11) + '-' + value.substring(11);
+            e.target.value = value;
+        });
+
+        // Máscara de Data de Nascimento automática
+        document.getElementById('nascimento').addEventListener('input', function (e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 2) value = value.substring(0,2) + '/' + value.substring(2);
+            if (value.length > 5) value = value.substring(0,5) + '/' + value.substring(5);
+            e.target.value = value;
+        });
+    </script>
+</body>
+</html>
