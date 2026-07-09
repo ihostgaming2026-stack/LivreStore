@@ -3,345 +3,325 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GTA 6 PRÉ VENDA (Ultimate Edition) - LibRyStore</title>
+    <title>Credliwe | Empréstimo Pessoal Simples e Rápido</title>
     <style>
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: #0b0c16;
-            color: #ffffff;
-            display: block;
-            min-height: 100vh;
-            padding-bottom: 50px;
+            background-color: #f9fbf9;
+            color: #333;
         }
 
-        /* Header Centralizado */
+        /* Header */
         header {
-            width: 100%;
-            padding: 30px 20px;
-            text-align: center;
-            background: linear-gradient(180deg, #141627 0%, #0b0c16 100%);
-            border-bottom: 1px solid #1f233f;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .logo {
-            font-size: 26px;
-            font-weight: 800;
-            letter-spacing: 1px;
-            color: #ffffff;
+            font-size: 32px;
+            font-weight: bold;
+            color: #27a454;
+            font-style: italic;
+        }
+
+        nav a {
             text-transform: uppercase;
-        }
-
-        .logo span {
-            color: #6366f1;
-        }
-
-        /* Container Principal do Produto */
-        .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 0 20px;
-            display: block;
-            width: 100%;
-        }
-
-        .product-table {
-            display: table;
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
-        }
-
-        .product-row {
-            display: table-row;
-        }
-
-        /* Coluna da Esquerda: Imagem */
-        .product-image-side {
-            display: table-cell;
-            width: 55%;
-            vertical-align: top;
-            padding-right: 40px;
-        }
-
-        .product-image-side img {
-            width: 100%;
-            border-radius: 12px;
-            border: 1px solid #2a2e50;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            display: block;
-        }
-
-        /* Coluna da Direita: Informações e Compra */
-        .product-info-side {
-            display: table-cell;
-            width: 45%;
-            vertical-align: top;
-            background-color: #141627;
-            border-radius: 16px;
-            padding: 30px;
-            border: 1px solid #1f233f;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-        }
-
-        .badge {
-            display: inline-block;
-            background-color: #e0f2fe;
-            color: #0369a1;
-            font-size: 11px;
-            font-weight: 700;
-            padding: 4px 10px;
-            border-radius: 4px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-
-        h1 {
-            font-size: 24px;
-            font-weight: 700;
-            line-height: 1.3;
-            margin-bottom: 20px;
-            color: #ffffff;
-        }
-
-        .price-container {
-            margin: 25px 0;
-            padding: 15px 0;
-            border-top: 1px solid #2a2e50;
-            border-bottom: 1px solid #2a2e50;
-        }
-
-        .price-label {
             font-size: 13px;
-            color: #94a3b8;
-            margin-bottom: 5px;
+            font-weight: 700;
+            color: #4a4a4a;
+            text-decoration: none;
+            margin-right: 20px;
+            letter-spacing: 0.5px;
         }
 
-        .price-value {
-            font-size: 36px;
-            font-weight: 800;
-            color: #22c55e;
+        nav a:hover {
+            color: #27a454;
         }
 
-        .input-group {
+        .btn-entrar {
+            background-color: #ffcc00;
+            color: #333;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 12px;
+            text-decoration: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 60px 10%;
+            min-height: 85vh;
+            background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200') no-repeat center center;
+            background-size: cover;
+        }
+
+        .hero-text {
+            max-width: 45%;
+        }
+
+        .hero-text h1 {
+            color: #216934;
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        /* Simulador Container */
+        .simulator-box {
+            background: #fff;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .sim-title {
+            color: #216934;
+            font-size: 18px;
+            font-weight: 600;
             margin-bottom: 15px;
         }
 
-        .input-group label {
-            display: block;
-            font-size: 12px;
-            color: #94a3b8;
-            margin-bottom: 5px;
+        .sim-title span {
+            color: #27a454;
+            font-weight: bold;
+            margin-right: 5px;
         }
 
-        .input-group input {
-            width: 100%;
-            padding: 12px;
-            background: #0b0c16;
-            border: 1px solid #2a2e50;
-            border-radius: 6px;
-            color: #fff;
-            font-size: 14px;
+        /* Slider Customization */
+        .slider-container {
+            margin-bottom: 30px;
+            position: relative;
         }
 
-        /* Botão de Compra */
-        .btn-buy {
-            display: block;
+        .value-display {
+            background-color: #27a454;
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .range-slider {
             width: 100%;
-            background-color: #6366f1;
-            color: #ffffff;
-            border: none;
-            padding: 16px 20px;
-            font-size: 16px;
-            font-weight: 700;
-            border-radius: 8px;
+            -webkit-appearance: none;
+            height: 8px;
+            border-radius: 5px;
+            background: #e0e0e0;
+            outline: none;
+        }
+
+        .range-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #27a454;
             cursor: pointer;
-            text-align: center;
-            transition: background-color 0.2s;
-            margin-top: 10px;
-            text-transform: uppercase;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
-        .btn-buy:hover {
-            background-color: #4f46e5;
-        }
-
-        /* Descrição Completa Abaixo */
-        .description-container {
-            max-width: 1000px;
-            margin: 40px auto 0 auto;
-            padding: 0 20px;
-        }
-
-        .description-box {
-            background-color: #141627;
-            border-radius: 16px;
-            padding: 40px;
-            border: 1px solid #1f233f;
-        }
-
-        .description-box h2 {
-            font-size: 20px;
-            margin-bottom: 20px;
-            color: #a5b4fc;
-            border-left: 4px solid #6366f1;
-            padding-left: 12px;
-        }
-
-        .description-box p {
-            font-size: 15px;
-            line-height: 1.6;
-            color: #cbd5e1;
-            margin-bottom: 20px;
-        }
-
-        /* Ficha Técnica */
-        .specs-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 30px;
-        }
-
-        .specs-table td {
-            padding: 12px 15px;
-            border-bottom: 1px solid #1f233f;
+        .range-limits {
+            display: flex;
+            justify-content: space-between;
             font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+            font-weight: bold;
         }
 
-        .specs-table td:first-child {
-            font-weight: 600;
-            color: #94a3b8;
-            width: 30%;
+        /* Grid de Parcelas */
+        .parcelas-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-bottom: 30px;
         }
 
-        .specs-table td:last-child {
-            color: #ffffff;
+        .parcela-card {
+            background: #f4f6f4;
+            border: 2px solid transparent;
+            padding: 12px 5px;
+            text-align: center;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
         }
 
-        .specs-table tr:last-child td {
-            border-bottom: none;
+        .parcela-card.active {
+            background: #27a454;
+            color: white;
+            border-color: #27a454;
+        }
+
+        .parcela-card .num-vezes {
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            color: #666;
+        }
+
+        .parcela-card.active .num-vezes {
+            color: #fff;
+        }
+
+        .parcela-card .valor-vezes {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* Botão Principal */
+        .btn-solicitar {
+            display: block;
+            width: 100%;
+            background-color: #ffcc00;
+            color: #216934;
+            text-align: center;
+            padding: 15px;
+            border-radius: 30px;
+            font-size: 20px;
+            font-weight: 900;
+            text-decoration: none;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);
+            transition: transform 0.1s ease;
+        }
+
+        .btn-solicitar:active {
+            transform: scale(0.98);
+        }
+
+        .legal-notice {
+            font-size: 11px;
+            color: #888;
+            margin-top: 15px;
+            line-height: 1.4;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header { padding: 15px 5px; flex-direction: column; gap: 15px; }
+            .hero { flex-direction: column; padding: 40px 20px; text-align: center; }
+            .hero-text { max-width: 100%; margin-bottom: 30px; }
+            .hero-text h1 { font-size: 30px; }
+            .parcelas-grid { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header com Nome da Loja Centralizada -->
     <header>
-        <div class="logo">🎮 LibRy<span>Store</span></div>
+        <div class="logo">Credliwe</div>
+        <nav>
+            <a href="#">Como Funciona</a>
+            <a href="#">Quem Somos</a>
+            <a href="#">Ajuda</a>
+            <a href="#">Blog</a>
+        </nav>
+        <a href="#" class="btn-entrar">👤 Entrar</a>
     </header>
 
-    <div class="container">
-        <div class="product-table">
-            <div class="product-row">
-                
-                <!-- Coluna da Esquerda: Imagem do Jogo -->
-                <div class="product-image-side">
-                    <img src="gta6.jpg" alt="GTA 6 Ultimate Edition">
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Empréstimo pessoal online, rápido e seguro.</h1>
+            <p>Dinheiro na conta sem burocracia para você usar como quiser.</p>
+        </div>
+
+        <div class="simulator-box">
+            <!-- Passo 1: Slider -->
+            <div class="sim-title"><span>1.</span> Quer um empréstimo pessoal de quanto?</div>
+            <div class="slider-container">
+                <div class="value-display" id="amountDisplay">R$ 2000</div>
+                <input type="range" min="500" max="3500" step="100" value="2000" class="range-slider" id="amountSlider">
+                <div class="range-limits">
+                    <span>R$ 500</span>
+                    <span>R$ 3500</span>
                 </div>
-
-                <!-- Coluna da Direita: Informações e Redirecionamento -->
-                <div class="product-info-side">
-                    <span class="badge">Pré-Venda Exclusiva</span>
-                    <h1>GTA 6 PRÉ VENDA (Ultimate Edition) Grand Theft Auto VI ( PS5 Mídia Digital</h1>
-                    
-                    <div class="price-container">
-                        <div class="price-label">Preço Único</div>
-                        <div class="price-value">R$ 119,99</div>
-                    </div>
-
-                    <!-- Formulário para o cliente preencher antes do redirecionamento -->
-                    <form onsubmit="redirecionarPagamento(event)">
-                        <div class="input-group">
-                            <label for="payerName">Nome Completo</label>
-                            <input type="text" id="payerName" placeholder="Ex: João Silva" required>
-                        </div>
-                        
-                        <div class="input-group">
-                            <label for="payerDocument">CPF (Apenas números)</label>
-                            <input type="text" id="payerDocument" placeholder="Ex: 12345678901" maxlength="11" required>
-                        </div>
-
-                        <!-- Botão de Ação -->
-                        <button type="submit" class="btn-buy" id="btnComprar">Comprar Agora via PIX</button>
-                    </form>
-                </div>
-
             </div>
-        </div>
-    </div>
 
-    <!-- Seção de Descrição Completa -->
-    <div class="description-container">
-        <div class="description-box">
-            <h2>Descrição do Produto</h2>
-            <p>Experimente a revolução dos jogos de ação com GTA 6 Ultimate Edition para PS5 em mídia digital. Este título icônico oferece um mundo aberto imersivo, repleto de aventuras eletrizantes, gráficos de última geração e uma narrativa envolvente que prende o jogador do início ao fim. Desenvolvido especialmente para PlayStation 5, o jogo explora ao máximo a potência do console, garantindo performance fluida e visuais impressionantes.</p>
-            
-            <p>GTA 6 Ultimate Edition traz uma experiência completa, com conteúdos exclusivos que ampliam sua imersão e diversão. Explore cidades vibrantes, conduza veículos incríveis e participe de missões que desafiam sua estratégia e reflexos. A interatividade com personagens complexos e cenários detalhados cria uma conexão emocional intensa, fazendo você se sentir parte do universo do jogo.</p>
-            
-            <p>Perfeito para fãs de jogos de mundo aberto e action, GTA 6 é a escolha certa para quem busca entretenimento de alta qualidade e jogabilidade dinâmica. A mídia digital facilita o acesso imediato ao jogo, permitindo começar a jogar sem esperar por entregas físicas.</p>
+            <!-- Passo 2: Parcelas -->
+            <div class="sim-title"><span>2.</span> Quer pagar em quantas parcelas?</div>
+            <div class="parcelas-grid">
+                <div class="parcela-card" onclick="selectCard(this, 3)" id="card3">
+                    <div class="num-vezes">3X de</div>
+                    <div class="valor-vezes" id="val3">R$ 0,00</div>
+                </div>
+                <div class="parcela-card" onclick="selectCard(this, 6)" id="card6">
+                    <div class="num-vezes">6X de</div>
+                    <div class="valor-vezes" id="val6">R$ 0,00</div>
+                </div>
+                <div class="parcela-card" onclick="selectCard(this, 9)" id="card9">
+                    <div class="num-vezes">9X de</div>
+                    <div class="valor-vezes" id="val9">R$ 0,00</div>
+                </div>
+                <div class="parcela-card active" onclick="selectCard(this, 12)" id="card12">
+                    <div class="num-vezes">12X de</div>
+                    <div class="valor-vezes" id="val12">R$ 0,00</div>
+                </div>
+            </div>
 
-            <h2 style="margin-top: 40px;">Ficha Técnica</h2>
-            <table class="specs-table">
-                <tr>
-                    <td>Plataforma</td>
-                    <td>PS5</td>
-                </tr>
-                <tr>
-                    <td>Edição</td>
-                    <td>Ultimate Edition</td>
-                </tr>
-                <tr>
-                    <td>Tipo de Mídia</td>
-                    <td>Digital (download)</td>
-                </tr>
-                <tr>
-                    <td>Gênero</td>
-                    <td>Ação, Aventura, Mundo Aberto</td>
-                </tr>
-                <tr>
-                    <td>Idioma</td>
-                    <td>Português (Brasil)</td>
-                </tr>
-                <tr>
-                    <td>Desenvolvedor</td>
-                    <td>Rockstar Games</td>
-                </tr>
-                <tr>
-                    <td>Formato</td>
-                    <td>Jogo completo com conteúdos adicionais exclusivos</td>
-                </tr>
-                <tr>
-                    <td>Compatibilidade</td>
-                    <td>Exclusivo para PlayStation 5</td>
-                </tr>
-            </table>
+            <!-- Botão de Ação -->
+            <a href="#" class="btn-solicitar">Solicite Já!</a>
+
+            <p class="legal-notice">
+                Informações adicionais. Prazo de pagamento: O período mínimo é de 3 meses e o máximo de 12 meses. Sujeito a análise de crédito.
+            </p>
         </div>
-    </div>
+    </section>
 
     <script>
-        function redirecionarPagamento(event) {
-            event.preventDefault();
+        const slider = document.getElementById('amountSlider');
+        const display = document.getElementById('amountDisplay');
 
-            const nome = document.getElementById('payerName').value.trim();
-            const cpf = document.getElementById('payerDocument').value.trim().replace(/\D/g, '');
-            const btn = document.getElementById('btnComprar');
+        // Taxas simuladas aproximadas baseadas no mercado desse tipo de crédito
+        const taxas = { 3: 0.14, 6: 0.11, 9: 0.09, 12: 0.08 };
 
-            if (!nome || cpf.length !== 11) {
-                alert("Por favor, preencha o Nome Completo e um CPF válido com 11 dígitos.");
-                return;
-            }
-
-            btn.innerText = "Redirecionando...";
-            btn.disabled = true;
-
-            // Redirecionamento direto para a SyncPayments com o link enviado
-            window.location.href = "https://app.syncpayments.com.br/payment-link/a22a6886-5bf8-4ed7-8455-407f49a4596b";
+        function calcularParcelas(valor) {
+            // Conta simples de simulação (Valor * (1 + taxa) / parcelas)
+            document.getElementById('val3').innerText = 'R$ ' + ((valor * (1 + taxas[3])) / 3).toFixed(2).replace('.', ',');
+            document.getElementById('val6').innerText = 'R$ ' + ((valor * (1 + taxas[6])) / 6).toFixed(2).replace('.', ',');
+            document.getElementById('val9').innerText = 'R$ ' + ((valor * (1 + taxas[9])) / 9).toFixed(2).replace('.', ',');
+            document.getElementById('val12').innerText = 'R$ ' + ((valor * (1 + taxas[12])) / 12).toFixed(2).replace('.', ',');
         }
+
+        function selectCard(element, parcelas) {
+            // Remove a classe active de todos
+            document.querySelectorAll('.parcela-card').forEach(card => {
+                card.classList.remove('active');
+            });
+            // Adiciona no clicado
+            element.classList.add('active');
+        }
+
+        // Atualiza os valores ao arrastar o slider
+        slider.addEventListener('input', function() {
+            display.innerText = 'R$ ' + this.value;
+            calcularParcelas(Number(this.value));
+        });
+
+        // Inicializa o cálculo na primeira carga do site
+        calcularParcelas(2000);
     </script>
 </body>
 </html>
