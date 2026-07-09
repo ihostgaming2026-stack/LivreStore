@@ -17,46 +17,22 @@
             color: #333;
         }
 
-        /* Header */
+        /* Header Centralizado */
         header {
             display: flex;
-            justify-content: space-between;
+            justify-content: center; /* Centraliza horizontalmente */
             align-items: center;
-            padding: 20px 10%;
+            padding: 25px 10%;
             background-color: #fff;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .logo {
-            font-size: 32px;
+            font-size: 36px; /* Aumentado levemente para dar mais destaque */
             font-weight: bold;
             color: #27a454;
             font-style: italic;
-        }
-
-        nav a {
-            text-transform: uppercase;
-            font-size: 13px;
-            font-weight: 700;
-            color: #4a4a4a;
-            text-decoration: none;
-            margin-right: 20px;
-            letter-spacing: 0.5px;
-        }
-
-        nav a:hover {
-            color: #27a454;
-        }
-
-        .btn-entrar {
-            background-color: #ffcc00;
-            color: #333;
-            padding: 8px 20px;
-            border-radius: 4px;
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 12px;
-            text-decoration: none;
+            letter-spacing: -0.5px;
         }
 
         /* Hero Section */
@@ -221,7 +197,6 @@
 
         /* Responsividade */
         @media (max-width: 768px) {
-            header { padding: 15px 5px; flex-direction: column; gap: 15px; }
             .hero { flex-direction: column; padding: 40px 20px; text-align: center; }
             .hero-text { max-width: 100%; margin-bottom: 30px; }
             .hero-text h1 { font-size: 30px; }
@@ -233,13 +208,6 @@
 
     <header>
         <div class="logo">Credliwe</div>
-        <nav>
-            <a href="#">Como Funciona</a>
-            <a href="#">Quem Somos</a>
-            <a href="#">Ajuda</a>
-            <a href="#">Blog</a>
-        </nav>
-        <a href="#" class="btn-entrar">👤 Entrar</a>
     </header>
 
     <section class="hero">
@@ -249,7 +217,6 @@
         </div>
 
         <div class="simulator-box">
-            <!-- Passo 1: Slider -->
             <div class="sim-title"><span>1.</span> Quer um empréstimo pessoal de quanto?</div>
             <div class="slider-container">
                 <div class="value-display" id="amountDisplay">R$ 2000</div>
@@ -258,70 +225,3 @@
                     <span>R$ 500</span>
                     <span>R$ 3500</span>
                 </div>
-            </div>
-
-            <!-- Passo 2: Parcelas -->
-            <div class="sim-title"><span>2.</span> Quer pagar em quantas parcelas?</div>
-            <div class="parcelas-grid">
-                <div class="parcela-card" onclick="selectCard(this, 3)" id="card3">
-                    <div class="num-vezes">3X de</div>
-                    <div class="valor-vezes" id="val3">R$ 0,00</div>
-                </div>
-                <div class="parcela-card" onclick="selectCard(this, 6)" id="card6">
-                    <div class="num-vezes">6X de</div>
-                    <div class="valor-vezes" id="val6">R$ 0,00</div>
-                </div>
-                <div class="parcela-card" onclick="selectCard(this, 9)" id="card9">
-                    <div class="num-vezes">9X de</div>
-                    <div class="valor-vezes" id="val9">R$ 0,00</div>
-                </div>
-                <div class="parcela-card active" onclick="selectCard(this, 12)" id="card12">
-                    <div class="num-vezes">12X de</div>
-                    <div class="valor-vezes" id="val12">R$ 0,00</div>
-                </div>
-            </div>
-
-            <!-- Botão de Ação -->
-            <a href="#" class="btn-solicitar">Solicite Já!</a>
-
-            <p class="legal-notice">
-                Informações adicionais. Prazo de pagamento: O período mínimo é de 3 meses e o máximo de 12 meses. Sujeito a análise de crédito.
-            </p>
-        </div>
-    </section>
-
-    <script>
-        const slider = document.getElementById('amountSlider');
-        const display = document.getElementById('amountDisplay');
-
-        // Taxas simuladas aproximadas baseadas no mercado desse tipo de crédito
-        const taxas = { 3: 0.14, 6: 0.11, 9: 0.09, 12: 0.08 };
-
-        function calcularParcelas(valor) {
-            // Conta simples de simulação (Valor * (1 + taxa) / parcelas)
-            document.getElementById('val3').innerText = 'R$ ' + ((valor * (1 + taxas[3])) / 3).toFixed(2).replace('.', ',');
-            document.getElementById('val6').innerText = 'R$ ' + ((valor * (1 + taxas[6])) / 6).toFixed(2).replace('.', ',');
-            document.getElementById('val9').innerText = 'R$ ' + ((valor * (1 + taxas[9])) / 9).toFixed(2).replace('.', ',');
-            document.getElementById('val12').innerText = 'R$ ' + ((valor * (1 + taxas[12])) / 12).toFixed(2).replace('.', ',');
-        }
-
-        function selectCard(element, parcelas) {
-            // Remove a classe active de todos
-            document.querySelectorAll('.parcela-card').forEach(card => {
-                card.classList.remove('active');
-            });
-            // Adiciona no clicado
-            element.classList.add('active');
-        }
-
-        // Atualiza os valores ao arrastar o slider
-        slider.addEventListener('input', function() {
-            display.innerText = 'R$ ' + this.value;
-            calcularParcelas(Number(this.value));
-        });
-
-        // Inicializa o cálculo na primeira carga do site
-        calcularParcelas(2000);
-    </script>
-</body>
-</html>
