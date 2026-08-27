@@ -1,1 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOS Nepal - Salve Vidas Atingidas pelos Deslizamentos</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
+        body {
+            background-color: #f7f9fc;
+            color: #2c3e50;
+            line-height: 1.7;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('ilustracao1.jpg') center/cover no-repeat;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin-bottom: 30px;
+            color: #e0e0e0;
+        }
+
+        /* Container Principal */
+        .container {
+            max-width: 1000px;
+            margin: -60px auto 50px auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Imagens */
+        .image-placeholder {
+            width: 100%;
+            height: 380px;
+            background-color: #e2e8f0;
+            border: 2px dashed #cbd5e1;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            font-weight: 600;
+            margin: 30px 0;
+            text-transform: uppercase;
+        }
+
+        .grid-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        /* Textos */
+        h2 {
+            color: #c0392b;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #f2d7d5;
+            padding-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        /* Destaque de Impacto */
+        .impact-box {
+            background-color: #fdf2e9;
+            border-left: 5px solid #e67e22;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+
+        .impact-box h3 {
+            color: #d35400;
+            margin-bottom: 10px;
+        }
+
+        /* Botão de Doação */
+        .cta-container {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1fr solid #eee;
+        }
+
+        .btn-donate {
+            background-color: #e74c3c;
+            color: white;
+            font-size: 1.6rem;
+            font-weight: bold;
+            padding: 20px 50px;
+            text-decoration: none;
+            border-radius: 50px;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-donate:hover {
+            background-color: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.6);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .grid-images { grid-template-columns: 1fr; }
+            .container { padding: 20px; margin-top: -30px; }
+            .btn-donate { width: 100%; padding: 15px 20px; font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <h1>Nas Montanhas Sagradas, o Silêncio da Dor</h1>
+        <p>A terra cedeu, mas a esperança do povo nepalês não pode ruir. Sua ajuda é o abrigo que eles precisam hoje.</p>
+    </header>
+
+    <main class="container">
+        
+        <article>
+            <h2>A Terra Secou as Lágrimas, Mas Não a Fome de Recomeçar</h2>
+            
+            <p>O Nepal, berço de paisagens majestosas e de um povo de fé inabalável, enfrenta um dos momentos mais sombrios de sua história recente. As chuvas devastadoras desencadearam deslizamentos de terra avassaladores, transformando vilarejos inteiros em escombros e lama em questão de minutos.</p>
+
+            <div class="image1.png">
+                [ Espaço para foto: ilustracao1 - Panorama do deslizamento no Nepal ]
+            </div>
+
+            <p>Por trás das estatísticas frias de desastre natural, existem histórias interrompidas: mães que perderam seus lares, crianças que aguardam por comida sob o frio da montanha e famílias inteiras que viram tudo o que construíram ser engolido pela terra. O som do vento nas cordilheiras agora carrega o eco de um pedido de socorro.</p>
+
+            <div class="impact-box">
+                <h3>O Cenário Atual no Nepal</h3>
+                <ul>
+                    * **Milhares de desabrigados:** Famílias vivendo em acampamentos improvisados sem acesso a água potável.
+                    * **Risco de epidemias:** Falta de saneamento básico e medicamentos para feridos e crianças.
+                    * **Isolamento total:** Vilarejos nas montanhas estão incomunicáveis, dependendo inteiramente de missões de resgate aéreo e suprimentos emergenciais.
+                </ul>
+            </div>
+
+            <h2>Como a Sua Generosidade Transforma o Lamaçal em Vida</h2>
+
+            <p>Quando a terra se move com violência, o tempo torna-se o maior inimigo da sobrevivência. As primeiras horas e dias são cruciais para fornecer o básico: um teto provisório, um prato de comida quente, um cobertor para afastar o frio da altitude e atendimento médico imediato.</p>
+
+            <div class="image2.png">
+                <div class="image-placeholder">
+                    [ Espaço para foto: ilustracao2 - Resgate / Crianças ]
+                </div>
+                <div class="image3.png">
+                    [ Espaço me para foto: ilustracao3 - Distribuição de suprimentos ]
+                </div>
+            </div>
+
+            <p>Você não pode parar a chuva ou conter a força da natureza, mas tem o poder exato de decidir o que acontece depois. Cada contribuição enviada através desta vaquinha online transforma-se diretamente em kits de sobrevivência, purificadores de água, remédios e reconstrução de vidas no Nepal.</p>
+
+            <p>Não estamos pedindo apenas uma doação; estamos convidando você a ser a mão estendida que resgata alguém do silêncio da lama. Nenhum valor é pequeno quando o objetivo é devolver a dignidade a um ser humano.</p>
+        </article>
+
+        <section class="cta-container">
+            <a href="https://link.syncpayments.com.br/t5rozP" class="btn-donate">SALVE O NEPAL</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Campanha Humanitária de Apoio às Vítimas dos Deslizamentos no Nepal.</p>
+    </footer>
+
+</body>
+</html>
