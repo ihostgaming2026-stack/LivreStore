@@ -20,7 +20,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('ilustracao1.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('image1.jpg') center/cover no-repeat;
             height: 80vh;
             display: flex;
             flex-direction: column;
@@ -57,27 +57,26 @@
             z-index: 10;
         }
 
-        /* Imagens */
-        .image-placeholder {
+        /* Estilo das Imagens */
+        .site-image {
             width: 100%;
-            height: 380px;
-            background-color: #e2e8f0;
-            border: 2px dashed #cbd5e1;
+            max-height: 450px;
+            object-fit: cover;
             border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #64748b;
-            font-weight: 600;
-            margin: 30px 0;
-            text-transform: uppercase;
+            margin: 25px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
         .grid-images {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
-            margin: 30px 0;
+            margin: 25px 0;
+        }
+
+        .grid-images .site-image {
+            height: 280px;
+            margin: 0;
         }
 
         /* Textos */
@@ -109,12 +108,20 @@
             margin-bottom: 10px;
         }
 
+        .impact-box ul {
+            margin-left: 20px;
+        }
+
+        .impact-box li {
+            margin-bottom: 8px;
+        }
+
         /* Botão de Doação */
         .cta-container {
             text-align: center;
             margin-top: 50px;
             padding-top: 30px;
-            border-top: 1fr solid #eee;
+            border-top: 1px solid #eee;
         }
 
         .btn-donate {
@@ -156,11 +163,13 @@
 </head>
 <body>
 
+    <!-- Hero Header (Fundo usando image1.jpg) -->
     <header class="hero">
         <h1>Nas Montanhas Sagradas, o Silêncio da Dor</h1>
         <p>A terra cedeu, mas a esperança do povo nepalês não pode ruir. Sua ajuda é o abrigo que eles precisam hoje.</p>
     </header>
 
+    <!-- Conteúdo Principal -->
     <main class="container">
         
         <article>
@@ -168,18 +177,17 @@
             
             <p>O Nepal, berço de paisagens majestosas e de um povo de fé inabalável, enfrenta um dos momentos mais sombrios de sua história recente. As chuvas devastadoras desencadearam deslizamentos de terra avassaladores, transformando vilarejos inteiros em escombros e lama em questão de minutos.</p>
 
-            <div class="image1.png">
-                [ Espaço para foto: ilustracao1 - Panorama do deslizamento no Nepal ]
-            </div>
+            <!-- Foto 1 -->
+            <img src="image1.jpg" alt="Panorama dos deslizamentos no Nepal" class="site-image">
 
             <p>Por trás das estatísticas frias de desastre natural, existem histórias interrompidas: mães que perderam seus lares, crianças que aguardam por comida sob o frio da montanha e famílias inteiras que viram tudo o que construíram ser engolido pela terra. O som do vento nas cordilheiras agora carrega o eco de um pedido de socorro.</p>
 
             <div class="impact-box">
                 <h3>O Cenário Atual no Nepal</h3>
                 <ul>
-                    Milhares de desabrigados: Famílias vivendo em acampamentos improvisados sem acesso a água potável.
-                    Risco de epidemias: Falta de saneamento básico e medicamentos para feridos e crianças.
-                    Isolamento total: Vilarejos nas montanhas estão incomunicáveis, dependendo inteiramente de missões de resgate aéreo e suprimentos emergenciais.
+                    <li><strong>Milhares de desabrigados:</strong> Famílias vivendo em acampamentos improvisados sem acesso a água potável.</li>
+                    <li><strong>Risco de epidemias:</strong> Falta de saneamento básico e medicamentos para feridos e crianças.</li>
+                    <li><strong>Isolamento total:</strong> Vilarejos nas montanhas estão incomunicáveis, dependendo inteiramente de missões de resgate e suprimentos emergenciais.</li>
                 </ul>
             </div>
 
@@ -187,13 +195,10 @@
 
             <p>Quando a terra se move com violência, o tempo torna-se o maior inimigo da sobrevivência. As primeiras horas e dias são cruciais para fornecer o básico: um teto provisório, um prato de comida quente, um cobertor para afastar o frio da altitude e atendimento médico imediato.</p>
 
+            <!-- Fotos 2 e 3 em Lado a Lado -->
             <div class="grid-images">
-                <div class="image2.png">
-                    [ Espaço para foto: ilustracao2 - Resgate / Crianças ]
-                </div>
-                <div class="image3.png">
-                    [ Espaço me para foto: ilustracao3 - Distribuição de suprimentos ]
-                </div>
+                <img src="image2.jpg" alt="Resgate e apoio às vítimas no Nepal" class="site-image">
+                <img src="image3.jpg" alt="Distribuição de suprimentos de emergência" class="site-image">
             </div>
 
             <p>Você não pode parar a chuva ou conter a força da natureza, mas tem o poder exato de decidir o que acontece depois. Cada contribuição enviada através desta vaquinha online transforma-se diretamente em kits de sobrevivência, purificadores de água, remédios e reconstrução de vidas no Nepal.</p>
@@ -201,9 +206,9 @@
             <p>Não estamos pedindo apenas uma doação; estamos convidando você a ser a mão estendida que resgata alguém do silêncio da lama. Nenhum valor é pequeno quando o objetivo é devolver a dignidade a um ser humano.</p>
         </article>
 
+        <!-- Botão de Ação para a Vaquinha -->
         <section class="cta-container">
-            <p><strong>Insira o link da sua vaquinha abaixo mudando o atributo href="#"</strong></p>
-            <a href="SEU_LINK_DA_VAQUINHA_AQUI" target="_blank" class="btn-donate">SALVE O NEPAL</a>
+            <a href="https://link.syncpayments.com.br/t5rozP" target="_blank" class="btn-donate">SALVE O NEPAL</a>
         </section>
 
     </main>
